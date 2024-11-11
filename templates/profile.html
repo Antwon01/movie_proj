@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block title %}Profile - MovieRate{% endblock %}
+{% block content %}
+<section class="profile-section">
+  <h2>{{ current_user.username }}'s Profile</h2>
+  <h3>Your Ratings and Reviews</h3>
+  {% for rating in ratings %}
+  <div class="review">
+    <p><strong>Movie:</strong> <a href="{{ url_for('movie_detail', movie_id=rating.movie['id']) }}">{{ rating.movie['title'] }}</a></p>
+    <p><strong>Rating:</strong> {{ rating.stars }} / 5</p>
+    <p><strong>Review:</strong> {{ rating.review }}</p>
+  </div>
+  {% else %}
+  <p>You haven't rated any movies yet.</p>
+  {% endfor %}
+</section>
+{% endblock %}

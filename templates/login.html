@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Login - MovieRate{% endblock %}
+{% block content %}
+<section class="form-section">
+  <h2>Login</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.username.label }}<br>
+      {{ form.username() }}
+    </div>
+    <div class="form-group">
+      {{ form.password.label }}<br>
+      {{ form.password() }}
+    </div>
+    {{ form.submit(class_="btn") }}
+  </form>
+</section>
+{% endblock %}

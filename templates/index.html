@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}Home - MovieRate{% endblock %}
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Discover and Rate Your Favorite Movies</h1>
+    <p>Join a community of movie enthusiasts.</p>
+    <a href="{{ url_for('register') }}" class="btn">Get Started</a>
+  </div>
+</section>
+
+<!-- Featured Movies -->
+<section class="featured-movies">
+  <h2>Featured Movies</h2>
+  <div class="movie-grid">
+    {% for movie in movies %}
+    <!-- Movie Card -->
+    <div class="movie-card">
+      <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
+        <img src="{{ url_for('static', filename='images/' + movie.poster) }}" alt="{{ movie.title }}">
+      </a>
+      <div class="movie-info">
+        <h3>{{ movie.title }}</h3>
+        <p>
+          <i class="fas fa-star"></i>
+          {% set movie_ratings = ratings | selectattr('movie_id', 'equalto', movie.id) | list %}
+          {% if movie_ratings %}
+            {% set avg_rating = movie_ratings | map(attribute='stars') | sum / movie_ratings|length %}
+            {{ '%.1f' % avg_rating }}
+          {% else %}
+            N/A
+          {% endif %}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

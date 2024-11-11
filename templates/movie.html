@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+{% block title %}{{ movie.title }} - MovieRate{% endblock %}
+{% block content %}
+<!-- Movie Details Section -->
+<section class="movie-detail">
+  <div class="container">
+    <div class="poster">
+      <img src="{{ url_for('static', filename='images/' + movie.poster) }}" alt="{{ movie.title }}">
+    </div>
+    <div class="details">
+      <h2>{{ movie.title }}</h2>
+      <p class="rating">
+        <i class="fas fa-star"></i>
+        {% set movie_ratings = ratings %}
+        {% if movie_ratings %}
+          {% set avg_rating = movie_ratings | map(attribute='stars') | sum / movie_ratings|length %}
+          {{ '%.1f' % avg_rating }}
+        {% else %}
+          N/A
+        {% endif %}
+      </p>
+      <p><strong>Genre:</strong> {{ movie.genre }}</p>
+      <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+      <p><strong>Synopsis:</strong> {{ movie.synopsis }}</p>
+      {% if current_user.is_authenticated %}
+      <a href="#rating-form" class="btn">Rate This Movie</a>
+      {% else %}
+      <a href="{{ url_for('login') }}" class="btn">Log in to Rate</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Rating Form -->
+{% if current_user.is_authenticated %}
+<section id="rating-form" class="rating-section">
+  <h2>Submit Your Rating</h2>
+  <form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.stars.label }}<br>
+      {{ form.stars(min=1, max=5) }}
+    </div>
+    <div class="form-group">
+      {{ form.review.label }}<br>
+      {{ form.review(cols=50, rows=5) }}
+    </div>
+    {{ form.submit(class_="btn") }}
+  </form>
+</section>
+{% endif %}
+
+<!-- User Reviews Section -->
+<section class="reviews">
+  <h2>User Reviews</h2>
+  {% for rating in ratings %}
+  <div class="review">
+    {% set user = users | selectattr('id', 'equalto', rating.user_id) | first %}
+    <p><strong>{{ user.username if user else 'Anonymous' }}:</strong> {{ rating.review }}</p>
+    <p>Rating: {{ rating.stars }} / 5</p>
+  </div>
+  {% else %}
+  <p>No reviews yet. Be the first to review this movie!</p>
+  {% endfor %}
+</section>
+{% endblock %}

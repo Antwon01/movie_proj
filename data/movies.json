@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "title": "Movie Title 1",
+        "genre": "Action, Adventure",
+        "release_date": "2023",
+        "synopsis": "An exciting adventure of a lifetime.",
+        "poster": "movie1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Movie Title 2",
+        "genre": "Drama",
+        "release_date": "2022",
+        "synopsis": "A touching story about life and love.",
+        "poster": "movie2.jpg"
+    }
+]
