@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Discover - MovieRate{% endblock %}
+{% block content %}
+<section class="discover-section">
+  <h2>Discover New Movies</h2>
+  <!-- Filters -->
+  <form method="GET" action="{{ url_for('discover') }}" class="filters-form">
+    <label>Genre:
+      <select name="genre">
+        <option value="">Any</option>
+        <!-- Populate genres dynamically -->
+        {% for genre in genres %}
+        <option value="{{ genre }}">{{ genre }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Country:
+      <select name="country">
+        <option value="">Any</option>
+        <!-- Populate countries dynamically -->
+        {% for country in countries %}
+        <option value="{{ country }}">{{ country }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Year:
+      <input type="number" name="year" min="1900" max="2023">
+    </label>
+    <button type="submit" class="btn">Apply Filters</button>
+    {% if current_user.is_authenticated %}
+    <button type="submit" name="save_filters" value="1" class="btn">Save Filters</button>
+    {% endif %}
+  </form>
+  <!-- Movie Recommendations -->
+  <div class="movie-grid">
+    {% for movie in movies %}
+    <div class="movie-card">
+      <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
+        <img src="{{ url_for('static', filename='images/' + movie.poster) }}" alt="{{ movie.title }}">
+      </a>
+      <div class="movie-info">
+        <h3>{{ movie.title }}</h3>
+        <p>
+          <i class="fas fa-star"></i>
+          {{ movie.average_rating }}
+        </p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

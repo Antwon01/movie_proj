@@ -3,16 +3,40 @@
         "id": 1,
         "title": "Movie Title 1",
         "genre": "Action, Adventure",
+        "director": "Director Name",
         "release_date": "2023",
+        "country": "USA",
         "synopsis": "An exciting adventure of a lifetime.",
-        "poster": "movie1.jpg"
+        "poster": "movie1.jpg",
+        "critic_ratings": {
+            "average": 8.5,
+            "reviews": [
+                {
+                    "critic": "Critic A",
+                    "rating": 9,
+                    "comment": "A must-watch!"
+                }
+            ]
+        }
     },
     {
         "id": 2,
         "title": "Movie Title 2",
         "genre": "Drama",
+        "director": "Another Director",
         "release_date": "2022",
+        "country": "UK",
         "synopsis": "A touching story about life and love.",
-        "poster": "movie2.jpg"
+        "poster": "movie2.jpg",
+        "critic_ratings": {
+            "average": 7.8,
+            "reviews": [
+                {
+                    "critic": "Critic B",
+                    "rating": 8,
+                    "comment": "Heartwarming and well-acted."
+                }
+            ]
+        }
     }
 ]

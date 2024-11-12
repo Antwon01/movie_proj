@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "id": 1,
+        "username": "test",
+        "password": "sha256$50aWqfi729gbRRUm$e521c992d98fc6aae8ea91f439c28950573fc68bd4633e34c6f8eee7b953569d"
+    },
+    {
+        "id": 2,
+        "username": "Jake",
+        "password": "sha256$W3TYAFqxCQrCuGzr$75f0a9255c5b839b0d185f2eeaf378a5d25b22371f6f2b4efca06d37fd6037a9"
+    }
+]

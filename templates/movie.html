@@ -64,3 +64,59 @@
   {% endfor %}
 </section>
 {% endblock %}
+
+<!-- Critic Ratings Section -->
+<section class="critic-ratings">
+  <h2>Critic Ratings</h2>
+  {% if movie.critic_ratings %}
+  <p>Average Critic Rating: {{ movie.critic_ratings.average }}/10</p>
+  {% else %}
+  <p>No critic ratings available.</p>
+  {% endif %}
+</section>
+
+<!-- User Reviews Section -->
+<section class="reviews">
+  <h2>User Reviews</h2>
+  <!-- Existing code for user reviews -->
+  <!-- Add like/dislike buttons and comment options -->
+  {% for rating in ratings %}
+  <div class="review">
+    <!-- Existing review content -->
+    <div class="review-interactions">
+      <form action="{{ url_for('like_review', review_id=rating.id) }}" method="POST">
+        <button type="submit"><i class="fas fa-thumbs-up"></i> {{ rating.likes }}</button>
+      </form>
+      <form action="{{ url_for('dislike_review', review_id=rating.id) }}" method="POST">
+        <button type="submit"><i class="fas fa-thumbs-down"></i> {{ rating.dislikes }}</button>
+      </form>
+    </div>
+    <!-- Comments Section -->
+    <div class="comments">
+      <!-- Display comments -->
+      {% for comment in rating.comments %}
+      <p><strong>{{ comment.user }}:</strong> {{ comment.text }}</p>
+      {% endfor %}
+      <!-- Add Comment Form -->
+      {% if current_user.is_authenticated %}
+      <form action="{{ url_for('add_comment', review_id=rating.id) }}" method="POST">
+        <input type="text" name="comment" placeholder="Add a comment..." required>
+        <button type="submit">Submit</button>
+      </form>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<!-- Bookmark and Watchlist Options -->
+{% if current_user.is_authenticated %}
+<div class="movie-actions">
+  <form action="{{ url_for('bookmark_movie', movie_id=movie.id) }}" method="POST">
+    <button type="submit" class="btn">Bookmark</button>
+  </form>
+  <form action="{{ url_for('add_to_watchlist', movie_id=movie.id) }}" method="POST">
+    <button type="submit" class="btn">Add to Watchlist</button>
+  </form>
+</div>
+{% endif %}
