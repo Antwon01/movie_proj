@@ -1,42 +1,1074 @@
 [
-    {
-        "id": 1,
-        "title": "Movie Title 1",
-        "genre": "Action, Adventure",
-        "director": "Director Name",
-        "release_date": "2023",
-        "country": "USA",
-        "synopsis": "An exciting adventure of a lifetime.",
-        "poster": "movie1.jpg",
-        "critic_ratings": {
-            "average": 8.5,
-            "reviews": [
-                {
-                    "critic": "Critic A",
-                    "rating": 9,
-                    "comment": "A must-watch!"
-                }
-            ]
+  {
+    "id": 1,
+    "title": "Movie Title 1",
+    "genre": "Action, Adventure",
+    "director": "Director Name",
+    "release_date": "2023",
+    "country": "USA",
+    "synopsis": "An exciting adventure of a lifetime.",
+    "poster": "movie1.jpg",
+    "critic_ratings": {
+      "average": 8.5,
+      "reviews": [
+        {
+          "critic": "Critic A",
+          "rating": 9,
+          "comment": "A must-watch!"
         }
+      ]
     },
-    {
-        "id": 2,
-        "title": "Movie Title 2",
-        "genre": "Drama",
-        "director": "Another Director",
-        "release_date": "2022",
-        "country": "UK",
-        "synopsis": "A touching story about life and love.",
-        "poster": "movie2.jpg",
-        "critic_ratings": {
-            "average": 7.8,
-            "reviews": [
-                {
-                    "critic": "Critic B",
-                    "rating": 8,
-                    "comment": "Heartwarming and well-acted."
-                }
-            ]
+    "category": "Classic"
+  },
+  {
+    "id": 2,
+    "title": "Movie Title 2",
+    "genre": "Drama",
+    "director": "Another Director",
+    "release_date": "2022",
+    "country": "UK",
+    "synopsis": "A touching story about life and love.",
+    "poster": "movie2.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic B",
+          "rating": 8,
+          "comment": "Heartwarming and well-acted."
         }
-    }
+      ]
+    },
+    "category": "Classic"
+  },
+
+  {
+    "id": 2,
+    "title": "Movie Title 2",
+    "genre": "Drama",
+    "director": "Another Director",
+    "release_date": "2022",
+    "country": "UK",
+    "synopsis": "A touching story about life and love.",
+    "poster": "movie2.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic B",
+          "rating": 8,
+          "comment": "Heartwarming and well-acted."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 3,
+    "title": "Movie Title 3",
+    "genre": "Thriller",
+    "director": "Director A",
+    "release_date": "2023",
+    "country": "Canada",
+    "synopsis": "A suspenseful journey filled with twists.",
+    "poster": "movie3.jpg",
+    "critic_ratings": {
+      "average": 6.9,
+      "reviews": [
+        {
+          "critic": "Critic C",
+          "rating": 7,
+          "comment": "Keeps you on the edge of your seat."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 4,
+    "title": "Movie Title 4",
+    "genre": "Comedy",
+    "director": "Director B",
+    "release_date": "2021",
+    "country": "USA",
+    "synopsis": "A hilarious take on everyday mishaps.",
+    "poster": "movie4.jpg",
+    "critic_ratings": {
+      "average": 8.2,
+      "reviews": [
+        {
+          "critic": "Critic D",
+          "rating": 9,
+          "comment": "Laugh-out-loud funny!"
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 5,
+    "title": "Movie Title 5",
+    "genre": "Romance",
+    "director": "Director C",
+    "release_date": "2019",
+    "country": "France",
+    "synopsis": "A beautiful love story that transcends time.",
+    "poster": "movie5.jpg",
+    "critic_ratings": {
+      "average": 7.5,
+      "reviews": [
+        {
+          "critic": "Critic E",
+          "rating": 8,
+          "comment": "Touching and beautifully filmed."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 6,
+    "title": "Movie Title 6",
+    "genre": "Sci-Fi",
+    "director": "Director D",
+    "release_date": "2024",
+    "country": "Japan",
+    "synopsis": "An exploration of technology and humanity.",
+    "poster": "movie6.jpg",
+    "critic_ratings": {
+      "average": 7.9,
+      "reviews": [
+        {
+          "critic": "Critic F",
+          "rating": 8,
+          "comment": "Thought-provoking and visually stunning."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 7,
+    "title": "Movie Title 7",
+    "genre": "Action",
+    "director": "Director E",
+    "release_date": "2020",
+    "country": "India",
+    "synopsis": "An action-packed adventure.",
+    "poster": "movie7.jpg",
+    "critic_ratings": {
+      "average": 6.5,
+      "reviews": [
+        {
+          "critic": "Critic G",
+          "rating": 7,
+          "comment": "Exciting and full of energy."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 8,
+    "title": "Movie Title 8",
+    "genre": "Horror",
+    "director": "Director F",
+    "release_date": "2023",
+    "country": "Australia",
+    "synopsis": "A chilling horror story that will haunt you.",
+    "poster": "movie8.jpg",
+    "critic_ratings": {
+      "average": 6.8,
+      "reviews": [
+        {
+          "critic": "Critic H",
+          "rating": 7,
+          "comment": "Creepy and atmospheric."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 9,
+    "title": "Movie Title 9",
+    "genre": "Drama",
+    "director": "Director G",
+    "release_date": "2022",
+    "country": "Italy",
+    "synopsis": "A tale of personal growth and struggle.",
+    "poster": "movie9.jpg",
+    "critic_ratings": {
+      "average": 8.0,
+      "reviews": [
+        {
+          "critic": "Critic I",
+          "rating": 8,
+          "comment": "Emotionally powerful and realistic."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 10,
+    "title": "Movie Title 10",
+    "genre": "Documentary",
+    "director": "Director H",
+    "release_date": "2021",
+    "country": "Brazil",
+    "synopsis": "A deep dive into the wonders of nature.",
+    "poster": "movie10.jpg",
+    "critic_ratings": {
+      "average": 9.1,
+      "reviews": [
+        {
+          "critic": "Critic J",
+          "rating": 9,
+          "comment": "Informative and visually captivating."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 11,
+    "title": "Movie Title 11",
+    "genre": "Fantasy",
+    "director": "Director I",
+    "release_date": "2020",
+    "country": "New Zealand",
+    "synopsis": "A magical journey in a mystical land.",
+    "poster": "movie11.jpg",
+    "critic_ratings": {
+      "average": 7.4,
+      "reviews": [
+        {
+          "critic": "Critic K",
+          "rating": 8,
+          "comment": "Enchanting and visually stunning."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 12,
+    "title": "Movie Title 12",
+    "genre": "Mystery",
+    "director": "Director J",
+    "release_date": "2023",
+    "country": "Germany",
+    "synopsis": "A puzzle that keeps you guessing until the end.",
+    "poster": "movie12.jpg",
+    "critic_ratings": {
+      "average": 8.5,
+      "reviews": [
+        {
+          "critic": "Critic L",
+          "rating": 9,
+          "comment": "Masterful storytelling with an intriguing plot."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 13,
+    "title": "Movie Title 13",
+    "genre": "Adventure",
+    "director": "Director K",
+    "release_date": "2022",
+    "country": "Russia",
+    "synopsis": "An epic journey across lands unknown.",
+    "poster": "movie13.jpg",
+    "critic_ratings": {
+      "average": 7.7,
+      "reviews": [
+        {
+          "critic": "Critic M",
+          "rating": 8,
+          "comment": "A breathtaking adventure."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 14,
+    "title": "Movie Title 14",
+    "genre": "Drama",
+    "director": "Director L",
+    "release_date": "2018",
+    "country": "Mexico",
+    "synopsis": "A poignant story about family.",
+    "poster": "movie14.jpg",
+    "critic_ratings": {
+      "average": 8.3,
+      "reviews": [
+        {
+          "critic": "Critic N",
+          "rating": 9,
+          "comment": "Emotionally resonant and beautifully shot."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 15,
+    "title": "Movie Title 15",
+    "genre": "Comedy",
+    "director": "Director M",
+    "release_date": "2024",
+    "country": "Italy",
+    "synopsis": "A humorous look at cultural misunderstandings.",
+    "poster": "movie15.jpg",
+    "critic_ratings": {
+      "average": 7.1,
+      "reviews": [
+        {
+          "critic": "Critic O",
+          "rating": 7,
+          "comment": "A feel-good comedy with charm."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 16,
+    "title": "Movie Title 16",
+    "genre": "Action",
+    "director": "Director N",
+    "release_date": "2017",
+    "country": "South Korea",
+    "synopsis": "A high-octane thriller with non-stop action.",
+    "poster": "movie16.jpg",
+    "critic_ratings": {
+      "average": 7.5,
+      "reviews": [
+        {
+          "critic": "Critic P",
+          "rating": 8,
+          "comment": "Exciting and intense."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 17,
+    "title": "Movie Title 17",
+    "genre": "Fantasy",
+    "director": "Director O",
+    "release_date": "2022",
+    "country": "USA",
+    "synopsis": "A journey through a world of magic.",
+    "poster": "movie17.jpg",
+    "critic_ratings": {
+      "average": 7.2,
+      "reviews": [
+        {
+          "critic": "Critic Q",
+          "rating": 7,
+          "comment": "Imaginative and fun."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 18,
+    "title": "Movie Title 18",
+    "genre": "Thriller",
+    "director": "Director P",
+    "release_date": "2023",
+    "country": "France",
+    "synopsis": "A mystery that unfolds with suspense.",
+    "poster": "movie18.jpg",
+    "critic_ratings": {
+      "average": 8.0,
+      "reviews": [
+        {
+          "critic": "Critic R",
+          "rating": 8,
+          "comment": "Intense and well-crafted."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 19,
+    "title": "Movie Title 19",
+    "genre": "Sci-Fi",
+    "director": "Director Q",
+    "release_date": "2019",
+    "country": "China",
+    "synopsis": "A futuristic journey beyond the stars.",
+    "poster": "movie19.jpg",
+    "critic_ratings": {
+      "average": 8.1,
+      "reviews": [
+        {
+          "critic": "Critic S",
+          "rating": 8,
+          "comment": "Visually amazing and captivating."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 20,
+    "title": "Movie Title 20",
+    "genre": "Drama",
+    "director": "Director R",
+    "release_date": "2024",
+    "country": "Argentina",
+    "synopsis": "A heartfelt story about overcoming adversity.",
+    "poster": "movie20.jpg",
+    "critic_ratings": {
+      "average": 7.6,
+      "reviews": [
+        {
+          "critic": "Critic T",
+          "rating": 8,
+          "comment": "Inspiring and moving."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 21,
+    "title": "Movie Title 21",
+    "genre": "Horror",
+    "director": "Director S",
+    "release_date": "2023",
+    "country": "Canada",
+    "synopsis": "A nightmare that becomes real.",
+    "poster": "movie21.jpg",
+    "critic_ratings": {
+      "average": 6.7,
+      "reviews": [
+        {
+          "critic": "Critic U",
+          "rating": 7,
+          "comment": "Terrifying and chilling."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 22,
+    "title": "Movie Title 22",
+    "genre": "Drama",
+    "director": "Director T",
+    "release_date": "2015",
+    "country": "USA",
+    "synopsis": "A gripping drama about ambition and regret.",
+    "poster": "movie22.jpg",
+    "critic_ratings": {
+      "average": 8.0,
+      "reviews": [
+        {
+          "critic": "Critic V",
+          "rating": 8,
+          "comment": "A compelling exploration of human emotions."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 23,
+    "title": "Movie Title 23",
+    "genre": "Romance",
+    "director": "Director U",
+    "release_date": "2014",
+    "country": "UK",
+    "synopsis": "A love story that transcends time and space.",
+    "poster": "movie23.jpg",
+    "critic_ratings": {
+      "average": 7.9,
+      "reviews": [
+        {
+          "critic": "Critic W",
+          "rating": 8,
+          "comment": "A timeless romance."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 24,
+    "title": "Movie Title 24",
+    "genre": "Thriller",
+    "director": "Director V",
+    "release_date": "2017",
+    "country": "Canada",
+    "synopsis": "A chilling thriller filled with unexpected turns.",
+    "poster": "movie24.jpg",
+    "critic_ratings": {
+      "average": 7.6,
+      "reviews": [
+        {
+          "critic": "Critic X",
+          "rating": 8,
+          "comment": "Keeps you on the edge of your seat from start to finish."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 25,
+    "title": "Movie Title 25",
+    "genre": "Comedy",
+    "director": "Director W",
+    "release_date": "2016",
+    "country": "Australia",
+    "synopsis": "A hilarious series of events that will leave you in stitches.",
+    "poster": "movie25.jpg",
+    "critic_ratings": {
+      "average": 8.1,
+      "reviews": [
+        {
+          "critic": "Critic Y",
+          "rating": 9,
+          "comment": "A laugh-out-loud comedy."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 26,
+    "title": "Movie Title 26",
+    "genre": "Sci-Fi",
+    "director": "Director X",
+    "release_date": "2018",
+    "country": "USA",
+    "synopsis": "An alien invasion that turns everything upside down.",
+    "poster": "movie26.jpg",
+    "critic_ratings": {
+      "average": 7.3,
+      "reviews": [
+        {
+          "critic": "Critic Z",
+          "rating": 8,
+          "comment": "A thrilling sci-fi experience."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 27,
+    "title": "Movie Title 27",
+    "genre": "Horror",
+    "director": "Director Y",
+    "release_date": "2013",
+    "country": "France",
+    "synopsis": "A terrifying story of a haunted house.",
+    "poster": "movie27.jpg",
+    "critic_ratings": {
+      "average": 7.0,
+      "reviews": [
+        {
+          "critic": "Critic AA",
+          "rating": 7,
+          "comment": "Classic horror that never gets old."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 28,
+    "title": "Movie Title 28",
+    "genre": "Action",
+    "director": "Director Z",
+    "release_date": "2012",
+    "country": "Germany",
+    "synopsis": "An action-packed adventure through the streets of Berlin.",
+    "poster": "movie28.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic AB",
+          "rating": 8,
+          "comment": "Exciting and full of energy."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 29,
+    "title": "Movie Title 29",
+    "genre": "Fantasy",
+    "director": "Director AA",
+    "release_date": "2010",
+    "country": "New Zealand",
+    "synopsis": "A fantasy adventure through enchanted lands.",
+    "poster": "movie29.jpg",
+    "critic_ratings": {
+      "average": 8.4,
+      "reviews": [
+        {
+          "critic": "Critic AC",
+          "rating": 9,
+          "comment": "An epic tale of magic and wonder."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 30,
+    "title": "Movie Title 30",
+    "genre": "Drama",
+    "director": "Director AB",
+    "release_date": "2009",
+    "country": "Italy",
+    "synopsis": "A heartfelt drama about the importance of family.",
+    "poster": "movie30.jpg",
+    "critic_ratings": {
+      "average": 8.2,
+      "reviews": [
+        {
+          "critic": "Critic AD",
+          "rating": 9,
+          "comment": "A beautifully crafted family drama."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 31,
+    "title": "Movie Title 31",
+    "genre": "Action",
+    "director": "Director AC",
+    "release_date": "2008",
+    "country": "Spain",
+    "synopsis": "A high-stakes action film filled with plot twists.",
+    "poster": "movie31.jpg",
+    "critic_ratings": {
+      "average": 7.5,
+      "reviews": [
+        {
+          "critic": "Critic AE",
+          "rating": 8,
+          "comment": "Packed with action and excitement."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 32,
+    "title": "Movie Title 32",
+    "genre": "Comedy",
+    "director": "Director AD",
+    "release_date": "2011",
+    "country": "Canada",
+    "synopsis": "A quirky comedy about an odd group of friends.",
+    "poster": "movie32.jpg",
+    "critic_ratings": {
+      "average": 7.4,
+      "reviews": [
+        {
+          "critic": "Critic AF",
+          "rating": 8,
+          "comment": "A fun, feel-good comedy."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 33,
+    "title": "Movie Title 33",
+    "genre": "Drama",
+    "director": "Director AE",
+    "release_date": "2007",
+    "country": "UK",
+    "synopsis": "A deep and meaningful exploration of life and death.",
+    "poster": "movie33.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic AG",
+          "rating": 8,
+          "comment": "A moving and introspective film."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 34,
+    "title": "Movie Title 34",
+    "genre": "Horror",
+    "director": "Director AF",
+    "release_date": "2006",
+    "country": "Germany",
+    "synopsis": "A classic horror story with a supernatural twist.",
+    "poster": "movie34.jpg",
+    "critic_ratings": {
+      "average": 7.2,
+      "reviews": [
+        {
+          "critic": "Critic AH",
+          "rating": 7,
+          "comment": "Chilling and suspenseful."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 35,
+    "title": "Movie Title 35",
+    "genre": "Action",
+    "director": "Director AG",
+    "release_date": "2005",
+    "country": "USA",
+    "synopsis": "A fast-paced action movie with high stakes.",
+    "poster": "movie35.jpg",
+    "critic_ratings": {
+      "average": 7.6,
+      "reviews": [
+        {
+          "critic": "Critic AI",
+          "rating": 8,
+          "comment": "Action-packed and thrilling."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 36,
+    "title": "Movie Title 36",
+    "genre": "Sci-Fi",
+    "director": "Director AH",
+    "release_date": "2004",
+    "country": "France",
+    "synopsis": "A journey into space with stunning visuals.",
+    "poster": "movie36.jpg",
+    "critic_ratings": {
+      "average": 7.9,
+      "reviews": [
+        {
+          "critic": "Critic AJ",
+          "rating": 8,
+          "comment": "A visually immersive experience."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 37,
+    "title": "Movie Title 37",
+    "genre": "Comedy",
+    "director": "Director AI",
+    "release_date": "2005",
+    "country": "Canada",
+    "synopsis": "A hilarious comedy about life’s mishaps.",
+    "poster": "movie37.jpg",
+    "critic_ratings": {
+      "average": 7.4,
+      "reviews": [
+        {
+          "critic": "Critic AK",
+          "rating": 8,
+          "comment": "A delightful and funny film."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 38,
+    "title": "Movie Title 38",
+    "genre": "Action",
+    "director": "Director AJ",
+    "release_date": "2010",
+    "country": "UK",
+    "synopsis": "A daring rescue mission with high stakes.",
+    "poster": "movie38.jpg",
+    "critic_ratings": {
+      "average": 7.6,
+      "reviews": [
+        {
+          "critic": "Critic AL",
+          "rating": 8,
+          "comment": "A pulse-pounding action movie."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 39,
+    "title": "Movie Title 39",
+    "genre": "Romance",
+    "director": "Director AK",
+    "release_date": "2007",
+    "country": "Australia",
+    "synopsis": "A love story that defies expectations.",
+    "poster": "movie39.jpg",
+    "critic_ratings": {
+      "average": 7.5,
+      "reviews": [
+        {
+          "critic": "Critic AM",
+          "rating": 8,
+          "comment": "A sweet and tender romance."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 40,
+    "title": "Movie Title 40",
+    "genre": "Horror",
+    "director": "Director AL",
+    "release_date": "2008",
+    "country": "USA",
+    "synopsis": "A terrifying supernatural thriller.",
+    "poster": "movie40.jpg",
+    "critic_ratings": {
+      "average": 7.1,
+      "reviews": [
+        {
+          "critic": "Critic AN",
+          "rating": 7,
+          "comment": "Spine-chilling and intense."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 41,
+    "title": "Movie Title 41",
+    "genre": "Adventure",
+    "director": "Director AM",
+    "release_date": "2009",
+    "country": "India",
+    "synopsis": "An epic journey across breathtaking landscapes.",
+    "poster": "movie41.jpg",
+    "critic_ratings": {
+      "average": 7.7,
+      "reviews": [
+        {
+          "critic": "Critic AO",
+          "rating": 8,
+          "comment": "A grand adventure with stunning visuals."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 42,
+    "title": "Movie Title 42",
+    "genre": "Drama",
+    "director": "Director AN",
+    "release_date": "2006",
+    "country": "France",
+    "synopsis": "A drama about the fragility of human relationships.",
+    "poster": "movie42.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic AP",
+          "rating": 8,
+          "comment": "Thought-provoking and emotionally resonant."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 43,
+    "title": "Movie Title 43",
+    "genre": "Action",
+    "director": "Director AO",
+    "release_date": "2014",
+    "country": "Germany",
+    "synopsis": "A heart-stopping action film with incredible stunts.",
+    "poster": "movie43.jpg",
+    "critic_ratings": {
+      "average": 7.9,
+      "reviews": [
+        {
+          "critic": "Critic AQ",
+          "rating": 9,
+          "comment": "An action-packed thrill ride."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 44,
+    "title": "Movie Title 44",
+    "genre": "Fantasy",
+    "director": "Director AP",
+    "release_date": "2015",
+    "country": "Japan",
+    "synopsis": "A magical quest in an ancient world.",
+    "poster": "movie44.jpg",
+    "critic_ratings": {
+      "average": 7.4,
+      "reviews": [
+        {
+          "critic": "Critic AR",
+          "rating": 8,
+          "comment": "A mesmerizing and fantastical journey."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 45,
+    "title": "Movie Title 45",
+    "genre": "Mystery",
+    "director": "Director AQ",
+    "release_date": "2016",
+    "country": "Brazil",
+    "synopsis": "A gripping mystery that keeps you guessing.",
+    "poster": "movie45.jpg",
+    "critic_ratings": {
+      "average": 7.6,
+      "reviews": [
+        {
+          "critic": "Critic AS",
+          "rating": 8,
+          "comment": "Clever and unpredictable."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 46,
+    "title": "Movie Title 46",
+    "genre": "Drama",
+    "director": "Director AR",
+    "release_date": "2017",
+    "country": "UK",
+    "synopsis": "A poignant story about the fragility of life.",
+    "poster": "movie46.jpg",
+    "critic_ratings": {
+      "average": 7.8,
+      "reviews": [
+        {
+          "critic": "Critic AT",
+          "rating": 8,
+          "comment": "A deeply emotional and touching film."
+        }
+      ]
+    },
+    "category": "Classic"
+  },
+  {
+    "id": 47,
+    "title": "Movie Title 47",
+    "genre": "Comedy",
+    "director": "Director AS",
+    "release_date": "2018",
+    "country": "USA",
+    "synopsis": "A hilarious tale of misadventures in the workplace.",
+    "poster": "movie47.jpg",
+    "critic_ratings": {
+      "average": 7.7,
+      "reviews": [
+        {
+          "critic": "Critic AU",
+          "rating": 8,
+          "comment": "Witty and well-executed comedy."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 48,
+    "title": "Movie Title 48",
+    "genre": "Action",
+    "director": "Director AT",
+    "release_date": "2019",
+    "country": "Mexico",
+    "synopsis": "A high-octane film that delivers constant action.",
+    "poster": "movie48.jpg",
+    "critic_ratings": {
+      "average": 8.2,
+      "reviews": [
+        {
+          "critic": "Critic AV",
+          "rating": 9,
+          "comment": "A masterclass in action filmmaking."
+        }
+      ]
+    },
+    "category": "Popular"
+  },
+  {
+    "id": 49,
+    "title": "Movie Title 49",
+    "genre": "Horror",
+    "director": "Director AU",
+    "release_date": "2020",
+    "country": "Italy",
+    "synopsis": "A terrifying horror film with dark, supernatural forces.",
+    "poster": "movie49.jpg",
+    "critic_ratings": {
+      "average": 7.9,
+      "reviews": [
+        {
+          "critic": "Critic AW",
+          "rating": 8,
+          "comment": "A spine-chilling experience."
+        }
+      ]
+    },
+    "category": "In Theatre"
+  },
+  {
+    "id": 50,
+    "title": "Movie Title 50",
+    "genre": "Sci-Fi",
+    "director": "Director AV",
+    "release_date": "2021",
+    "country": "USA",
+    "synopsis": "A thrilling sci-fi film set in a dystopian future.",
+    "poster": "movie50.jpg",
+    "critic_ratings": {
+      "average": 7.5,
+      "reviews": [
+        {
+          "critic": "Critic AX",
+          "rating": 8,
+          "comment": "A futuristic adventure that captivates."
+        }
+      ]
+    },
+    "category": "Popular"
+  }
 ]

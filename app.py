@@ -66,8 +66,20 @@ def index():
             movie['average_rating'] = round(sum(ratings_list) / len(ratings_list), 1)
         else:
             movie['average_rating'] = 'N/A'
+
+    # Filter movies based on category section
+    in_theatre_movies = [movie for movie in movies if movie['category'] == "In Theatre"]
+    popular_movies = [movie for movie in movies if movie['category'] == "Popular"]
+    classics_movies = [movie for movie in movies if movie['category'] == "Classic"]
     
-    return render_template('index.html', movies=movies)
+    return render_template(
+        'index.html', 
+        movies=movies,
+        in_theatre_movies=in_theatre_movies,
+        popular_movies=popular_movies,
+        classics_movies=classics_movies
+        )
+
 
 
 @app.route('/register', methods=['GET', 'POST'])
