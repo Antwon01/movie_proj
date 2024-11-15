@@ -350,6 +350,11 @@ textarea {
 .discover-section h2 {
   text-align: center;
   font-size: 2.25rem;
+}
+
+.discover-section p{
+  text-align: center;
+  color: lightgrey;
   margin-bottom: 40px;
 }
 
@@ -390,6 +395,7 @@ textarea {
 .filters-form .btn:hover {
   background-color: #e04343;
 }
+
 
 /* =========================================
      Advanced Search Section

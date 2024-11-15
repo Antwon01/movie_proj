@@ -34,12 +34,14 @@
 </nav>
 
 <!-- Search Bar -->
-<div class="search-bar">
-  <form action="{{ url_for('search') }}" method="GET">
-    <input type="text" name="query" placeholder="Search for movies, genres, tags..." required>
-    <button type="submit"><i class="fas fa-search"></i></button>
-  </form>
-</div>
+{% if request.endpoint not in ['login', 'profile', 'register', 'advanced_search', 'discover'] %}
+  <div class="search-bar">
+    <form action="{{ url_for('search') }}" method="GET">
+      <input type="text" name="query" placeholder="Search for movies, genres, tags..." required>
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+{% endif %}
 
 
   <!-- Flash Messages -->
