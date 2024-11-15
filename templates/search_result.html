@@ -1,13 +1,12 @@
-{% extends "layout.html" %}
-{% block title %}Advanced Search - MovieRate{% endblock %}
-{% block content %}
+{% extends "layout.html" %} {% block title %}Advanced Search - MovieRate{%
+endblock %} {% block content %}
 <section class="advanced-search-section">
-  <h2>Results</h2>
   <!-- Search Results -->
+  {% if result_num is not none%}
+  <h3>{{ result_num }} Results:</h3>
+  {% endif %}
   <div class="movie-grid">
-    {% for movie in movies %}
-        {% include 'movie_card.html' %}
-      {% endfor %}
+    {% for movie in movies %} {% include 'movie_card.html' %} {% endfor %}
   </div>
 </section>
 {% endblock %}

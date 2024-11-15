@@ -1,23 +1,30 @@
-{% extends "layout.html" %}
-{% block title %}{{ movie.title }} - MovieRate{% endblock %}
-{% block content %}
+{% extends "layout.html" %} {% block title %}{{ movie.title }} - MovieRate{%
+endblock %} {% block content %}
+
+<!-- Back Button -->
+{% if referrer %}
+<a href="{{ referrer }}" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+{% else %}
+<a href="{{ url_for('index') }}" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+{% endif %}
+
 <!-- Movie Details Section -->
 <section class="movie-detail">
   <div class="container">
     <div class="poster">
-      <img src="https://picsum.photos/id/{{ movie.random_id }}/200/300" alt="{{ movie.title }}">
+      <img
+        src="https://picsum.photos/id/{{ movie.random_id }}/200/300"
+        alt="{{ movie.title }}"
+      />
     </div>
     <div class="details">
       <h2>{{ movie.title }}</h2>
       <p class="rating">
         <i class="fas fa-star"></i>
-        {% set movie_ratings = ratings %}
-        {% if movie_ratings %}
-          {% set avg_rating = movie_ratings | map(attribute='stars') | sum / movie_ratings|length %}
-          {{ '%.1f' % avg_rating }}
-        {% else %}
-          N/A
-        {% endif %}
+        {% set movie_ratings = ratings %} {% if movie_ratings %} {% set
+        avg_rating = movie_ratings | map(attribute='stars') | sum /
+        movie_ratings|length %} {{ '%.1f' % avg_rating }} {% else %} N/A {%
+        endif %}
       </p>
       <p><strong>Genre:</strong> {{ movie.genre }}</p>
       <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
@@ -38,11 +45,11 @@
   <form method="POST">
     {{ form.hidden_tag() }}
     <div class="form-group">
-      {{ form.stars.label }}<br>
+      {{ form.stars.label }}<br />
       {{ form.stars(min=1, max=5) }}
     </div>
     <div class="form-group">
-      {{ form.review.label }}<br>
+      {{ form.review.label }}<br />
       {{ form.review(cols=50, rows=5) }}
     </div>
     {{ form.submit(class_="btn") }}
@@ -56,7 +63,10 @@
   {% for rating in ratings %}
   <div class="review">
     {% set user = users | selectattr('id', 'equalto', rating.user_id) | first %}
-    <p><strong>{{ user.username if user else 'Anonymous' }}:</strong> {{ rating.review }}</p>
+    <p>
+      <strong>{{ user.username if user else 'Anonymous' }}:</strong> {{
+      rating.review }}
+    </p>
     <p>Rating: {{ rating.stars }} / 5</p>
   </div>
   {% else %}
@@ -84,11 +94,21 @@
   <div class="review">
     <!-- Existing review content -->
     <div class="review-interactions">
-      <form action="{{ url_for('like_review', review_id=rating.id) }}" method="POST">
-        <button type="submit"><i class="fas fa-thumbs-up"></i> {{ rating.likes }}</button>
+      <form
+        action="{{ url_for('like_review', review_id=rating.id) }}"
+        method="POST"
+      >
+        <button type="submit">
+          <i class="fas fa-thumbs-up"></i> {{ rating.likes }}
+        </button>
       </form>
-      <form action="{{ url_for('dislike_review', review_id=rating.id) }}" method="POST">
-        <button type="submit"><i class="fas fa-thumbs-down"></i> {{ rating.dislikes }}</button>
+      <form
+        action="{{ url_for('dislike_review', review_id=rating.id) }}"
+        method="POST"
+      >
+        <button type="submit">
+          <i class="fas fa-thumbs-down"></i> {{ rating.dislikes }}
+        </button>
       </form>
     </div>
     <!-- Comments Section -->
@@ -99,8 +119,16 @@
       {% endfor %}
       <!-- Add Comment Form -->
       {% if current_user.is_authenticated %}
-      <form action="{{ url_for('add_comment', review_id=rating.id) }}" method="POST">
-        <input type="text" name="comment" placeholder="Add a comment..." required>
+      <form
+        action="{{ url_for('add_comment', review_id=rating.id) }}"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="comment"
+          placeholder="Add a comment..."
+          required
+        />
         <button type="submit">Submit</button>
       </form>
       {% endif %}
@@ -112,10 +140,16 @@
 <!-- Bookmark and Watchlist Options -->
 {% if current_user.is_authenticated %}
 <div class="movie-actions">
-  <form action="{{ url_for('bookmark_movie', movie_id=movie.id) }}" method="POST">
+  <form
+    action="{{ url_for('bookmark_movie', movie_id=movie.id) }}"
+    method="POST"
+  >
     <button type="submit" class="btn">Bookmark</button>
   </form>
-  <form action="{{ url_for('add_to_watchlist', movie_id=movie.id) }}" method="POST">
+  <form
+    action="{{ url_for('add_to_watchlist', movie_id=movie.id) }}"
+    method="POST"
+  >
     <button type="submit" class="btn">Add to Watchlist</button>
   </form>
 </div>

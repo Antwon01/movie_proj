@@ -55,6 +55,31 @@ textarea {
   font: inherit;
 }
 
+/* General back-button styling */
+.back-button {
+  display: inline-flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center;
+  justify-content: center;
+  color: black;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding-left: 20px;
+}
+
+.back-button :hover {
+  background-color:  lightslategray;
+}
+
+/* Specific styling for the back button */
+.back-button  i {
+  margin-right: 8px; /* Space between the icon and text */
+  font-size: 25px;   /* Icon size */
+}
+
 /* =========================================
      Navigation Bar
      ========================================= */
@@ -99,8 +124,13 @@ textarea {
   margin-right: 8px; /* Adjust space between icon and text */
 }
 
-.nav-links a:hover {
-  color: var(--primary-color);
+.nav-links a.active {
+  color: var(--primary-color);  /* Change text color */
+  font-weight: bold;
+}
+
+.nav-links a:hover:not(.active) {
+  color: var(--primary-color);  /* Hover effect for non-active links */
 }
 
 /* =========================================
@@ -371,6 +401,10 @@ textarea {
 .advanced-search-section h2 {
   text-align: center;
   font-size: 2.25rem;
+  margin-bottom: 40px;
+}
+.advanced-search-section h3 {
+  text-align: Left;
   margin-bottom: 40px;
 }
 

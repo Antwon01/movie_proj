@@ -1,26 +1,36 @@
-{% extends "layout.html" %}
-{% block title %}Advanced Search - MovieRate{% endblock %}
-{% block content %}
+{% extends "layout.html" %} {% block title %}Advanced Search - MovieRate{%
+endblock %} {% block content %}
 <section class="advanced-search-section">
   <h2>Advanced Movie Search</h2>
   <!-- Advanced Search Form -->
-  <form method="GET" action="{{ url_for('advanced_search') }}" class="advanced-search-form">
-    <label>Title:
-      <input type="text" name="title">
+  <form
+    method="GET"
+    action="{{ url_for('advanced_search') }}"
+    class="advanced-search-form"
+  >
+    <label
+      >Title:
+      <input type="text" name="title" />
     </label>
-    <label>Director:
-      <input type="text" name="director">
+    <label
+      >Director:
+      <input type="text" name="director" />
     </label>
     <!-- Include other filters like genre, year, etc. -->
     <button type="submit" class="btn">Search</button>
-    <button type="submit" name="export" value="csv" class="btn">Export CSV</button>
-    <button type="submit" name="export" value="pdf" class="btn">Export PDF</button>
+    <button type="submit" name="export" value="csv" class="btn">
+      Export CSV
+    </button>
+    <button type="submit" name="export" value="pdf" class="btn">
+      Export PDF
+    </button>
   </form>
   <!-- Search Results -->
+  {% if result_num is not none%}
+  <h3>{{ result_num }} Results:</h3>
+  {% endif %}
   <div class="movie-grid">
-    {% for movie in movies %}
-        {% include 'movie_card.html' %}
-      {% endfor %}
+    {% for movie in movies %} {% include 'movie_card.html' %} {% endfor %}
   </div>
 </section>
 {% endblock %}

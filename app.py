@@ -266,7 +266,7 @@ def advanced_search():
         elif export_format == 'pdf':
             return export_to_pdf(filtered_movies)
     
-    return render_template('advanced_search.html', movies=filtered_movies)
+    return render_template('advanced_search.html', movies=filtered_movies, result_num=len(filtered_movies))
 
 
 def export_to_csv(movies):
@@ -319,7 +319,7 @@ def search():
         else:
             movie['average_rating'] = 'N/A'
     
-    return render_template('search_result.html', movies=filtered_movies)
+    return render_template('search_result.html', movies=filtered_movies, result_num=len(filtered_movies))
 
 
 @app.route('/movie/<int:movie_id>', methods=['GET', 'POST'])
@@ -370,7 +370,9 @@ def movie_detail(movie_id):
             user['viewed_movies'].append(movie_id)
             write_json('users.json', users)
     
-    return render_template('movie.html', movie=movie, form=form, ratings=movie_ratings, users=users, average_rating=avg_rating)
+    referrer = request.referrer  # Get the previous URL
+    
+    return render_template('movie.html', movie=movie, form=form, ratings=movie_ratings, users=users, average_rating=avg_rating,  referrer=referrer)
 
 
 @app.route('/like_review/<int:review_id>', methods=['POST'])
