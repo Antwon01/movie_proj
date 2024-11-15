@@ -16,102 +16,23 @@ block content %}
 </section>
 
 <!-- Featured Movies -->
+<!-- Featured Movies -->
 <h2 class="featured-header">Featured Movies <i class="fa-solid fa-film"></i></h2>
 <section class="featured-movies">
-  <!-- In Theater Now Row -->
+  {% for category, movies in {'In Theaters Now': in_theatre_movies, 'Popular Right Now': popular_movies, 'Classics': classics_movies}.items() %}
   <div class="featured-row">
-    <h3>In Theaters Now</h3>
+    <h3>{{ category }}</h3>
     <!-- Scroll Button Left -->
     <button class="scroll-btn left" onclick="scrollMovies(this, 'left')">&#10094;</button>
     <div class="movie-row-container">
-      {% for movie in in_theatre_movies %}
-      <!-- Movie Card -->
-      <div class="movie-card">
-        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-          <img
-            src="{{ url_for('static', filename='images/' + movie.poster) }}"
-            alt="{{ movie.title }}"
-          />
-        </a>
-        <div class="movie-info">
-          <h3>{{ movie.title }}</h3>
-          <p>
-            <i class="fas fa-star"></i>
-            {% set movie_ratings = ratings | selectattr('movie_id', 'equalto',
-            movie.id) | list %} {% if movie_ratings %} {% set avg_rating =
-            movie_ratings | map(attribute='stars') | sum / movie_ratings |
-            length %} {{ '%.1f' % avg_rating }} {% else %} N/A {% endif %}
-          </p>
-        </div>
-      </div>
+      {% for movie in movies %}
+        {% include 'movie_card.html' %}
       {% endfor %}
     </div>
     <!-- Scroll Button Right -->
     <button class="scroll-btn right" onclick="scrollMovies(this, 'right')">&#10095;</button>
   </div>
-  <!-- In Theater Now Row -->
-  <div class="featured-row">
-    <h3>Popular Right Now</h3>
-    <!-- Scroll Button Left -->
-    <button class="scroll-btn left" onclick="scrollMovies(this, 'left')">&#10094;</button>
-    <div class="movie-row-container">
-      {% for movie in popular_movies %}
-      <!-- Movie Card -->
-      <div class="movie-card">
-        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-          <img
-            src="{{ url_for('static', filename='images/' + movie.poster) }}"
-            alt="{{ movie.title }}"
-          />
-        </a>
-        <div class="movie-info">
-          <h3>{{ movie.title }}</h3>
-          <p>
-            <i class="fas fa-star"></i>
-            {% set movie_ratings = ratings | selectattr('movie_id', 'equalto',
-            movie.id) | list %} {% if movie_ratings %} {% set avg_rating =
-            movie_ratings | map(attribute='stars') | sum / movie_ratings |
-            length %} {{ '%.1f' % avg_rating }} {% else %} N/A {% endif %}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    <!-- Scroll Button Right -->
-    <button class="scroll-btn right" onclick="scrollMovies(this, 'right')">&#10095;</button>
-  </div>
-  <!-- In Theater Now Row -->
-  <div class="featured-row">
-    <h3>Classics</h3>
-    <!-- Scroll Button Left -->
-    <button class="scroll-btn left" onclick="scrollMovies(this, 'left')">&#10094;</button>
-    <div class="movie-row-container">
-      {% for movie in classics_movies %}
-      <!-- Movie Card -->
-      <div class="movie-card">
-        <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-          <img
-            src="{{ url_for('static', filename='images/' + movie.poster) }}"
-            alt="{{ movie.title }}"
-          />
-        </a>
-        <div class="movie-info">
-          <h3>{{ movie.title }}</h3>
-          <p>
-            <i class="fas fa-star"></i>
-            {% set movie_ratings = ratings | selectattr('movie_id', 'equalto',
-            movie.id) | list %} {% if movie_ratings %} {% set avg_rating =
-            movie_ratings | map(attribute='stars') | sum / movie_ratings |
-            length %} {{ '%.1f' % avg_rating }} {% else %} N/A {% endif %}
-          </p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-
-    <!-- Scroll Button Right -->
-    <button class="scroll-btn right" onclick="scrollMovies(this, 'right')">&#10095;</button>
-  </div>
+  {% endfor %}
 </section>
+
 {% endblock %}

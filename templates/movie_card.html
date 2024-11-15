@@ -1,0 +1,23 @@
+<!-- _movie_card.html -->
+<div class="movie-card">
+    <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
+      <img
+        src="https://picsum.photos/id/{{ movie.random_id }}/200/300"
+        alt="{{ movie.title }}"
+      />
+    </a>
+    <div class="movie-info">
+      <h3>{{ movie.title }}</h3>
+      <p>
+        <i class="fas fa-star"></i>
+        {% set movie_ratings = ratings | selectattr('movie_id', 'equalto', movie.id) | list %}
+        {% if movie_ratings %}
+          {% set avg_rating = movie_ratings | map(attribute='stars') | sum / movie_ratings | length %}
+          {{ '%.1f' % avg_rating }}
+        {% else %}
+          N/A
+        {% endif %}
+      </p>
+    </div>
+  </div>
+  

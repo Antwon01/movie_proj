@@ -2,7 +2,8 @@ import json
 import os
 import csv
 import pdfkit
-from flask import Flask, render_template, redirect, url_for, request, flash, send_file, make_response
+import random
+from flask import Flask, render_template, redirect, url_for, request, flash, send_file, make_response, g
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
 from forms import RegistrationForm, LoginForm, RatingForm
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -51,6 +52,7 @@ def load_user(user_id):
 
 @app.route('/')
 def index():
+    global movies
     movies = read_json('movies.json')
     ratings = read_json('ratings.json')
     
@@ -61,11 +63,16 @@ def index():
         movie_ratings.setdefault(movie_id, []).append(rating['stars'])
     
     for movie in movies:
+        movie['random_id'] = random.randint(0, 200)  # Random URL IMAGE ID between 0 and 200
         ratings_list = movie_ratings.get(movie['id'], [])
         if ratings_list:
             movie['average_rating'] = round(sum(ratings_list) / len(ratings_list), 1)
         else:
             movie['average_rating'] = 'N/A'
+    
+     # Generate a random ID between 0 and 100
+    random_id = random.randint(0, 100)
+
 
     # Filter movies based on category section
     in_theatre_movies = [movie for movie in movies if movie['category'] == "In Theatre"]
@@ -77,7 +84,8 @@ def index():
         movies=movies,
         in_theatre_movies=in_theatre_movies,
         popular_movies=popular_movies,
-        classics_movies=classics_movies
+        classics_movies=classics_movies,
+        random_id=random_id
         )
 
 
@@ -142,7 +150,8 @@ def logout():
 
 @app.route('/discover', methods=['GET', 'POST'])
 def discover():
-    movies = read_json('movies.json')
+    global movies
+    
     genres = sorted(set(genre.strip() for movie in movies for genre in movie.get('genre', '').split(',')))
     countries = sorted(set(movie.get('country', 'Unknown') for movie in movies))
     
@@ -214,7 +223,9 @@ def discover():
 
 @app.route('/advanced_search', methods=['GET', 'POST'])
 def advanced_search():
-    movies = read_json('movies.json')
+    global movies
+
+    # Get Search Parameters
     title = request.args.get('title', '').lower()
     director = request.args.get('director', '').lower()
     genre = request.args.get('genre', '').lower()

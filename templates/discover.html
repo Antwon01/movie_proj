@@ -34,19 +34,8 @@
   <!-- Movie Recommendations -->
   <div class="movie-grid">
     {% for movie in movies %}
-    <div class="movie-card">
-      <a href="{{ url_for('movie_detail', movie_id=movie.id) }}">
-        <img src="{{ url_for('static', filename='images/' + movie.poster) }}" alt="{{ movie.title }}">
-      </a>
-      <div class="movie-info">
-        <h3>{{ movie.title }}</h3>
-        <p>
-          <i class="fas fa-star"></i>
-          {{ movie.average_rating }}
-        </p>
-      </div>
-    </div>
-    {% endfor %}
+        {% include 'movie_card.html' %}
+      {% endfor %}
   </div>
 </section>
 {% endblock %}
