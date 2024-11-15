@@ -1,7 +1,10 @@
 {% extends "layout.html" %} {% block title %}Home - MovieRate{% endblock %} {%
 block content %}
-<!-- Include the JavaScript file at the end of the body section -->
+<!-- Scolling Behavior -->
 <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+
+<!-- Font Awesome Icons -->
+<script src="https://kit.fontawesome.com/349de95c3e.js" crossorigin="anonymous"></script>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -13,7 +16,7 @@ block content %}
 </section>
 
 <!-- Featured Movies -->
-<h2 class="featured-header">Featured Movies</h2>
+<h2 class="featured-header">Featured Movies <i class="fa-solid fa-film"></i></h2>
 <section class="featured-movies">
   <!-- In Theater Now Row -->
   <div class="featured-row">

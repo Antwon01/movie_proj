@@ -83,6 +83,7 @@ textarea {
   list-style: none;
   display: flex;
   align-items: center;
+  gap: 5px;
 }
 
 .nav-links li {
@@ -93,6 +94,9 @@ textarea {
   color: #fff;
   font-size: 16px;
   transition: color var(--transition-speed) ease;
+}
+.nav-links li a i {
+  margin-right: 8px; /* Adjust space between icon and text */
 }
 
 .nav-links a:hover {
@@ -198,6 +202,9 @@ textarea {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   padding-left: 15px;
+}
+.featured-header i {
+  color: black; /* Adjust space between icon and text */
 }
 
 .featured-movies {

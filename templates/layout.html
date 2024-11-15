@@ -8,7 +8,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <!-- Font Awesome Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/349de95c3e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -20,15 +20,15 @@
     <span class="bar"></span>
   </div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="{{ url_for('index') }}">Home</a></li>
-    <li><a href="{{ url_for('discover') }}">Discover</a></li>
-    <li><a href="{{ url_for('advanced_search') }}">Advanced Search</a></li>
+    <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i>Home</a></li>
+    <li><a href="{{ url_for('discover') }}"><i class="fa-solid fa-wand-sparkles"></i>Discover</a></li>
+    <li><a href="{{ url_for('advanced_search') }}"><i class="fa-brands fa-searchengin"></i>Advanced Search</a></li>
     {% if current_user.is_authenticated %}
     <li><a href="{{ url_for('profile') }}">Profile</a></li>
     <li><a href="{{ url_for('logout') }}">Logout</a></li>
     {% else %}
-    <li><a href="{{ url_for('login') }}">Login</a></li>
-    <li><a href="{{ url_for('register') }}">Register</a></li>
+    <li><a href="{{ url_for('login') }}"><i class="fa-solid fa-right-to-bracket"></i>Login</a></li>
+    <li><a href="{{ url_for('register') }}"><i class="fa-solid fa-pen"></i>Register</a></li>
     {% endif %}
   </ul>
 </nav>
