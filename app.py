@@ -300,7 +300,7 @@ def export_to_pdf(movies):
 @app.route('/search', methods=['GET'])
 def search():
     query = request.args.get('query', '').lower()
-    movies = read_json('movies.json')
+    global movies
     if query:
         filtered_movies = [movie for movie in movies if query in movie['title'].lower() or query in [g.lower() for g in movie.get('genre', '').split(', ')]]
     else:
@@ -319,12 +319,12 @@ def search():
         else:
             movie['average_rating'] = 'N/A'
     
-    return render_template('index.html', movies=filtered_movies)
+    return render_template('search_result.html', movies=filtered_movies)
 
 
 @app.route('/movie/<int:movie_id>', methods=['GET', 'POST'])
 def movie_detail(movie_id):
-    movies = read_json('movies.json')
+    global movies
     movie = next((m for m in movies if m['id'] == movie_id), None)
     if not movie:
         flash('Movie not found.', 'danger')
