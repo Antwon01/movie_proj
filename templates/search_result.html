@@ -1,9 +1,20 @@
 {% extends "layout.html" %} {% block title %}Advanced Search - MovieRate{%
 endblock %} {% block content %}
-<section class="advanced-search-section">
+<!-- Search Section -->
+<section class="search-section">
+  <!-- Back Button -->
+  {% if referrer %}
+  <a href="{{ referrer }}" class="back-button"
+    ><i class="fas fa-arrow-left"></i> Back</a
+  >
+  {% else %}
+  <a href="{{ url_for('index') }}" class="back-button"
+    ><i class="fas fa-arrow-left"></i> Back</a
+  >
+  {% endif %}
   <!-- Search Results -->
   {% if result_num is not none%}
-  <h3>{{ result_num }} Results:</h3>
+  <h4>{{ result_num }} Results:</h4>
   {% endif %}
   <div class="movie-grid">
     {% for movie in movies %} {% include 'movie_card.html' %} {% endfor %}

@@ -68,6 +68,8 @@ textarea {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .back-button :hover {

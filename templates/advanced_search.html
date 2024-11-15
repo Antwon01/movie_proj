@@ -27,7 +27,7 @@ endblock %} {% block content %}
   </form>
   <!-- Search Results -->
   {% if result_num is not none%}
-  <h3>{{ result_num }} Results:</h3>
+  <h4>{{ result_num }} Results:</h4>
   {% endif %}
   <div class="movie-grid">
     {% for movie in movies %} {% include 'movie_card.html' %} {% endfor %}
